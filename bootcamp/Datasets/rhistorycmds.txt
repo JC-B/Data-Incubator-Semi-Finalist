@@ -1,0 +1,441 @@
+getwd
+setwd("C:/datasciencedojo/bootcamp/Datasets")
+iris <- read.csv("Iris_Data.csv",header=TRUE)
+head(iris)
+colnames(iris)[5] <- 'Type'
+head(iris)
+iris[1:5,3:5]
+summary(iris)
+str(iris)
+boxplot(iris$Sepal.Length)
+?par
+plot(x=iris$Sepal.Length, y=iris$Sepal.Width)
+iris[,"Sepal.Sum"] <- iris[,"Sepal.Length"] + iris[,"Sepal.Width"]
+head(iris)
+sapply(as.list(iris[,1:4]), sd)
+pair(iris)
+pairs(iris)
+boxplot(Sepal.Length ~ Species, data=iris)
+boxplot(Sepal.Length ~ Type, data=iris)
+boxplot(Sepal.Length ~
+Species,
+data=iris, main="Sepal
+Length for Various
+Species", xlab="Species",
+ylab="Sepal Length"
+)
+boxplot(Sepal.Length ~
+Type1Font(),
+data=iris, main="Sepal
+Length for Various
+Species", xlab="Species",
+ylab="Sepal Length"
+)
+boxplot(Sepal.Length ~
+Type(),
+data=iris, main="Sepal
+Length for Various
+Species", xlab="Species",
+ylab="Sepal Length"
+)
+boxplot(Sepal.Length ~
+Type,
+data=iris, main="Sepal
+Length for Various
+Species", xlab="Species",
+ylab="Sepal Length"
+)
+getwd()
+setwd("C:/datasciencedojo/bootcamp/Datasets")
+pdf("myplot.pdf")
+boxplot(Sepal.Length ~ Type,
+data=iris)
+dev.off()
+table(iris$Type)
+?table
+pie(table(iris$Type))
+?cor
+cor(iris[,3], iris[,2])
+cor(iris[1, 2]]
+cor(iris[1, 2]]
+plot(Sepal.Length ~ Sepal.Width,
+data=iris,xlab= “Sepal Length”, ylab=
+“Sepal Width”)
+libray(lattice)
+library(lattice)
+plot(Sepal.Length ~ Sepal.Width, data=iris,xlab= “Sepal Length”, ylab= “Sepal Width”)
+plot(Sepal.Length ~ Sepal.Width, data=iris,xlab= “Sepal Length”, ylab= “Sepal Width”)
+?plot
+plot(Sepal.Length ~ Sepal.Width, data=iris)
+plot(Sepal.Length ~ Sepal.Width, data=iris, xlab="Sepal Length")
+plot(Sepal.Length ~ Sepal.Width, data=iris, xlab="Sepal Length", ylab="Sepal Width")
+xyplot(Sepal.Width ~
+Sepal.Length, data=iris,
+groups=Type1Font())
+xyplot(Sepal.Width ~
+Sepal.Length, data=iris,
+groups=Type)
+data("iris")
+xyplot(Sepal.Width ~
+Sepal.Length, data=iris,
+groups=Type)
+xyplot(Sepal.Width ~
+Sepal.Length, data=iris,
+groups=Species)
+xyplot(Sepal.Length ~
+Sepal.Width, data=iris,
+groups=Species)
+xyplot(Sepal.Width ~
+Sepal.Length, data=iris,
+groups=Species)
+xyplot(Petal.Length ~
+Petal.Width, data=iris,
+groups=Species,autokey=TRUE)
+plot(Petal.Length ~
+Petal.Width, data=iris,
+groups=Species,autokey=TRUE)
+plot(Petal.Length ~
+Petal.Width, data=iris)
+plot(Petal.Length ~
+Petal.Width, data=iris,
+groups=Species,autokey=TRUE)
+plot(Petal.Length ~ Petal.Width, data=iris, xlab="Petal Length", ylab="Petal Width")
+warnings()
+plot(Petal.Length ~ Petal.Width, data=iris, xlab="Petal Length", ylab="Petal Width")
+dev.off()
+plot(Petal.Length ~ Petal.Width, data=iris, xlab="Petal Length", ylab="Petal Width")
+abline(lm(Petal.Length ~Petal.Width, data=iris), col = "red")
+?lm
+abline(lm(Petal.Length ~Petal.Width, data=iris), col = "red")
+?lm
+histogram(iris$Petal.Length, break=10,main="Histogram")
+histogram(iris$Petal.Length, break=10, main="Histogram")
+histogram(iris$Petal.Length, breaks=10, main="Histogram")
+summary(iris$Petal.Length)
+densityplot(iris$Petal.Length,
+main="Kernel Density of Petal
+Length", xlab="Petal Length“,
+type="percent", n=150)
+densityplot(iris$Petal.Length,
+main="Kernel Density of Petal
+Length", xlab="Petal Length“,
+type="percent", n=150)
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length")
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length“, type="percent", n=150)
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length“, type="percent")
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length“)
+)
+,
+)
+setwd("C:/datasciencedojo/bootcamp/Datasets")
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length“)
+setwd("C:/datasciencedojo/bootcamp/Datasets")
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length")
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length", groups=Species, data=iris)
+densityplot(Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length", groups=Species, data=iris)
+data(iris)
+densityplot(Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length", groups=Species, data=iris)
+densityplot(irisP$etal.Length, main="Kernel Density of Petal Length", xlab="Petal Length", groups=iris$Species)
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length", groups=iris$Species)
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length", groups=iris$Species, data=iris, autokey=TRUE)
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length", groups=iris$Species, autokey=TRUE)
+densityplot(iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length", groups=iris$Species, auto=TRUE)
+densityplot(~ iris$Petal.Length, main="Kernel Density of Petal Length", xlab="Petal Length", groups=iris$Species, auto=TRUE)
+densityplot(~ iris$Petal.Width, main="Kernel Density of Petal Length", xlab="Petal Length", groups=iris$Species, auto=TRUE)
+densityplot(~Petal.Width,
+data=iris,
+groups=Species,
+plot.points=F,
+xlab=list(label="Kernel
+Density of Petal Width",
+fontsize=20), ylab="",
+main=list(label="Density
+of Petal Width by
+Species", fontsize=24))
+densityplot(~Petal.Width,
+data=iris,
+groups=Species,
+plot.points=T,
+xlab=list(label="Kernel
+Density of Petal Width",
+fontsize=20), ylab="",
+main=list(label="Density
+of Petal Width by
+Species", fontsize=24))
+densityplot(~Petal.Width,
+data=iris,
+groups=Species,
+plot.points=T,
+xlab=list(label="Kernel
+Density of Petal Width",
+fontsize=20), ylab="",
+main=list(label="Density
+of Petal Width by
+Species", fontsize=24),auto=T)
+iris[1]
+iris[1:4]
+iris[1]
+iris[1:4,]
+library(GGally)
+install.packages("GGally")
+library(GGally)
+ggpairs(iris,
+ggplot2::aes(color=
+Species))
+data("mtcars")
+head(mtcars)
+summary()
+summary(mtcars)
+?lapply
+lapply(c(2:12),cor)
+lapply(list(2:12),cor)
+ggpairs(mtcars[2:12])
+boxplot(mtcars$mpg ~ mtcars$cyl, data= mtcars, main="Car Mileage Data",
+xlab="Number of Cylinders" ,ylab= "mpg", col = c("blue", "yellow",
+"red"))
+densityplot(~ mpg,
+data=mtcars,
+groups=cyl,
+plot.points=F,
+auto.key=list(columns=3, title="Cylinders"))
+plot(mpg ~ disp, data=mtcars)
+abline(lm(mpg ~ disp, data=mtcars), col="red")
+ggpairs(mtcars,
+ggplot2::aes(color=
+cyl))
+?ggpairs
+ggpairs(mtcars[2:12],ggplot2::aes(color=cyl))
+ggpairs(mtcars[,2:12],ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=2:12,ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=2:11,ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=2:11,ggplot2::aes(color=cyl))
+?ggpairs
+ggpairs(mtcars,columns=mtcars[2:11],ggplot2::aes(color=cyl))
+ggpairs(mtcars,columnsg=1:ncol(data),ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=2:4,ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=2:8,ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=c(mpg,disp,hp,drat,wt),ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=c("mpg","disp","hp","drat","wt"),ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=c("mpg","wt"),ggplot2::aes(color=cyl))
+library(GGally)
+ggpairs(mtcars,columns=c("mpg","wt","hp"),ggplot2::aes(color=cyl))
+ggpairs(mtcars, columns=c("mpg","wt","hp"),ggplot2::aes(color=cyl))
+ggpairs(mtcars, columns = C("mpg","wt","hp"), ggplot2::aes(color=cyl))
+dev.off
+dev.off()
+ggpairs(mtcars,columnsg=1:ncol(data),ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=c("wt","hp","mpg"),ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=c("hp","mpg"),ggplot2::aes(color=cyl))
+ggpairs(mtcars,columns=c("hp","mpg"),ggplot2::aes(color=as.character(cyl))
+setwd("C:/datasciencedojo/bootcamp/Datasets")
+install.packages("ggplot2)
+setwd("C:/datasciencedojo/bootcamp/Datasets")
+install.packages("ggplot2")
+install.packages("ggplot2")
+library(ggplot2)
+data(diamonds)
+head(diamonds)
+str(diamonds)
+levels(diamonds$cut)
+ggplot(diamonds,aes())
+ggplot(diamonds,aes()) + geom_histogram()
+ggplot(diamonds,aes(x=carat))
+ggplot(diamonds,aes(x=carat)) + geom_histogram()
+ggplot(diamonds,aes(x=carat)) + geom_boxplot()
+ggplot(diamonds,aes(x=carat))
+laer1 = ggplot(diamonds,aes(x=carat))
+layer1+geom_histogram()
+laer1+geom_histogram()
+laer1+geom_density()
+laer1 = ggplot(diamonds,aes(x=carat,y=price)) + geom_point()
+laer1 = ggplot(diamonds) + geom_point(aes(x=carat,y=price))
+laer1 = ggplot(diamonds) + geom_point(aes(x=carat,y=price)) + geom_point()
+ggplot(diamonds) + geom_point(aes(x=carat,y=price)) + geom_point()
+ggplot(diamonds,aes(x=carat,y=price)) + geom_point()
+ggplot(diamonds) + geom_point(aes(x=carat,y=price))
+g <- ggplot(diamonds,aes(x=carat,y=price))
+g + geom_point(color=cut)
+g + geom_point(aes(color=cut))
+g + geom_point(aes(color=cut)) + facet_wrap(~ cut
+)
+ggplot(diamonds,aes(x=carat,y=price)) + geom_point() + facet_wrap(~ cut)
+g + geom_point(aes(color=cut)) + facet_wrap(~ cut)
+setwd("C:/datasciencedojo/bootcamp/Datasets")
+titanic <- read.csv("titanic.csv"", header=T)
+)
+setwd("C:/datasciencedojo/bootcamp/Datasets")
+setwd("C:/datasciencedojo/bootcamp/Datasets")
+titanic <- read.csv("titanic.csv")
+titanic
+head(titanic)
+?boxplot
+boxplot(titanic,age)
+boxplot(titanic,Age)
+boxplot(titanic,"Age")
+?boxplot
+boxplot(Age, data=titanic)
+boxplot("Age", data=titanic)
+boxplot(Age, data=titanic)
+str(titanic)
+boxplot(Age, data=titanic)
+boxplot(titanic$Age, data=titanic)
+boxplot("Age", data=titanic)
+data(titanic)
+boxplot(titanic$Age, data=titanic)
+boxplot(titanic$Age ~ titanic$Sex, data=titanic)
+boxplot(titanic$Age ~ titanic$Sex, data=titanic, col=c("red","green"))
+boxplot(titanic$Age ~ titanic$Survived, data=titanic, col=c("red","green"))
+hist(titanic$Age,breaks=12,color="blue")
+hist(titanic$Age,breaks=12,col="blue")
+dev.off()
+hist(titanic$Age,breaks=12,col="blue")
+density(titanic$Age)
+?density
+density(na.omit(titanic$Age))
+plot(density(na.omit(titanic$Age))
+)
+plot(density(na.omit(titanic$Age)), col="red")
+?plot
+plot(density(na.omit(titanic$Age)), type=p)
+plot(density(na.omit(titanic$Age)), type="p")
+plot(density(na.omit(titanic$Age))
+)
+titanic$Survived <- as.factor(titanic$Survived)
+levels(titanic$Survived) = c("Dead","Survived")
+head(titanic)
+levels(titanic$Embarked) = c("Unknown","Cherbourg","Queenstown","Southampton")
+str(titanic[,c("Embarked","Survived")])
+survivedTable <- table(titanic$Survived)
+survivedTable
+pie(survivedTable)
+pie(survivedTable,labels=("Doomed","Happy"))
+pie(survivedTable, labels=("Doomed","Happy"))
+pie(survivedTable)
+pie(survivedTable, labels=c("Doomed","Happy"))
+?pie
+pie(survivedTable, labels=c("Doomed","Happy"),col=c("red","blue"))
+male <- titanic[titanic$Sex == "male",]
+female <- titanic[titanic$Sex == "female",]
+par(mfrow=c(1,2))
+pie(table(male$Survived), labels=c("Dead","Survived"), main="Survival rate for male passengers")
+pie(table(female$Survived), labels=c("Dead","Survived"), main="Survival rate for female passengers")
+table(titanic$Sex)
+summary(titanic[titanic$Survived
+=="Dead",]$Age)
+summary(titanic[titanic$Survived
+=="Dead","Age"]
+)
+summary(titanic[Survived
+=="Dead","Age"]
+)
+summary(titanic["Survived"
+=="Dead","Age"])
+summary(titanic[titanic$Survived
+=="Dead","Age"])
+summary(titanic[titanic$Survived
+=="Survived","Age"])
+boxplot(titanic$Age ~ titanic$Sex)
+par(mfrow=c(1,2))
+boxplot(titanic$Age ~ titanic$Survived)
+boxplot(titanic$Age ~ titanic$Sex)
+## DAY2
+data("iris")
+library(rpart)
+str(iris)
+nrows(iris)
+nrow(iris)
+iris[1:105,]
+table(iris$Species)
+table(iris[1:105,]$Species)
+sample()
+sample(5)
+sample(1:5)
+sample(10:15)
+sample(10:15,1)
+sample(1:150,105)
+train.index <- sample(1:150,105)
+iris[train.index]
+iris[train.index,]
+dim(iris[train.index,])
+table(iris[train.index,]$Species)
+set.seed(27)
+sample(1:5)
+sample(1:5)
+set.seed(27)
+iris.train.indices <- sample(1:nrow(iris),nrow(iris)*0.7)
+iris.train.set <- iris[iris.train.indices,
+]
+iris.test.set <- iris[-iris.train.indices,]
+dim(iris.test.set)
+dim(iris.train.set)
+?rpart()
+iris.model.dt <- rpart(Species~., data = iris.train.set)
+plot(iris.model.dt)
+text(iris.model.dt, use.n = TRUE)
+plot(iris.model.dt, margin=c(0.25,0.25,0.25.0.25))
+plot(iris.model.dt, margin=c(0.25,0.25,0.25,0.25))
+text(iris.model.dt, use.n = TRUE)
+summary(iris.model.dt)
+boxplot(Petal.Length~Species, data=iris)
+boxplot(Petal.Width~Species, data=iris)
+?rpart()
+?predict
+iris.dt.predictions <- predict(iris.model.dt, newdata=iris.test.set)
+head(iris.dt.predictions)
+iris.test.set[1,]
+tail(iris.dt.predictions)
+1/37
+iris.dt.predictions <- predict(iris.model.dt, newdata=iris.test.set, type="class")
+iris1 <- iris
+iris1 <- iris.test.set
+iris1$Predictions <- iris.dt.predictions
+iris1[,c("Species", "Predictions")]
+dbinom(x=6, size=10, prob=0.2)
+dbinom(x=10, size=10, prob=0.2)
+library(randomForest)
+install.packages("randomForest")
+library(randomForest)
+getwd
+getwd()
+titanic.data <- read.csv("titanic.csv", header=TRUE)
+dim(titanic.data)
+str(titanic.data)
+summary(titanic.data)
+head(titanic.data)
+titanic.data <- titanic.data[, -c(1, 4, 9, 11)]
+head(titanic.data)
+dim(titanic.data)
+str(titanic.data)
+summary(titanic.data)
+titanic.data$Survived <- as.factor(titanic.data$Survived)
+summary(titanic.data)
+titanic.data$Survived <- as.factor(titanic.data$Survived)
+levels(titanic.data$Survived) <- c('Dead', 'Alive')
+summary(titanic.data)
+str(titanic.data)
+median(titanic.data$Age, na.rm=TRUE)
+titanic.data$Age[is.na(titanic.data$Age)] <- median(titanic.data$Age, na.rm=TRUE)
+str(titanic.data)
+set.seed(27)
+titanic.train.indices <- sample(1:nrow(titanic.data), 0.7*nrow(titanic.data), replace=F)
+titanic.train <- titanic.data[titanic.train.indices,]
+titanic.test <- titanic.data[-titanic.train.indices,]
+dim(titanic.train)
+summary(titanic.train$Survived)
+dim(titanic.test)
+summary(titanic.test$Survived)
+titanic.rf.model <- randomForest(Survived ~ ., data=titanic.train)
+print(titanic.rf.model)
+str(titanic.rf.model)
+titanic.rf.predictions <- predict(titanic.rf.model, titanic.test, type="response")
+titanic.rf.confusion
+titanic.rf.predictions
+titanic.rf.model <- randomForest(Survived ~ ., data=titanic.train,ntree=100)
+print(titanic.rf.model)
+titanic.rf.model <- randomForest(Survived ~ ., data=titanic.train,ntree=100,mtry=3)
+print(titanic.rf.model)
+titanic.rf.model <- randomForest(Survived ~ ., data=titanic.train,importance=TRUE)
+varImpPlot(titanic.rf.model)
+?dbinom
+dbinom(x=2, size=20, prob=0.08)
+savehistory("C:/datasciencedojo/bootcamp/Datasets/rhistorycmds.txt")

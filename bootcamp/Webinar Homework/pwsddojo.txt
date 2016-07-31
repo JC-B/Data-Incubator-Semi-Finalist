@@ -1,0 +1,20 @@
+Storage Pswd	Jc_Dojo2016
+
+NameSpace 	jcdojonamespace
+HubName 	jcdojocredithub
+API Key		AKIy9JgkZTz4pethRZnAoFkQCvIkc8+nRKffP9t4MOo=
+Policy Name	sendkey
+creditstreamer
+jcdojocreditstorage
+
+
+jcdojoiotstorage
+jcdojoiotnamespace
+jcdojoiothub
+broker	b5D7pWx8qKISyzjE0fjpUB4AQ2CeQ23XkAdB4HKaTL8=
+StreamAnalytics	244Y0LYDGgb+ozqy0ZKRKZhPirOH6vjgEKwS2njdJhw=
+jcdojoiotjob
+
+
+An Introduction to Statistical Learning: with Applications in R (Springer Texts in Statistics)11 Jan 2016
+by Gareth James and Daniela Witten

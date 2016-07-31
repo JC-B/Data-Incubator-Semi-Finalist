@@ -1,0 +1,65 @@
+library(randomForest)
+library(stringr)
+titanic.train <- read.csv("train.csv")
+titanic.test <- read.csv("test.csv")
+
+titanic.train$FamilyCount <- titanic.train$SibSp + titanic.train$Parch
+titanic.train$FamilyFlag[titanic.train$FamilyCount==0] <- "Alone"
+titanic.train$FamilyFlag[titanic.train$FamilyCount>0] <- "Family"
+
+titanic.test$FamilyCount <- titanic.test$SibSp + titanic.test$Parch
+titanic.test$FamilyFlag[titanic.test$FamilyCount==0] <- "Alone"
+titanic.test$FamilyFlag[titanic.test$FamilyCount>0] <- "Family"
+
+
+titanic.train$Survived <- as.factor(titanic.train$Survived)
+titanic.train$SibSp <- as.factor(titanic.train$SibSp)
+titanic.train$Parch <- as.factor(titanic.train$Parch)
+titanic.train$Embarked <- as.factor(titanic.train$Embarked)
+titanic.train$FamilyFlag <- as.factor(titanic.train$FamilyFlag)
+titanic.train$Title <- as.factor(titanic.train$Title)
+
+titanic.test$SibSp <- as.factor(titanic.test$SibSp)
+titanic.test$Parch <- as.factor(titanic.test$Parch)
+titanic.test$Embarked <- as.factor(titanic.test$Embarked)
+titanic.test$FamilyFlag <- as.factor(titanic.test$FamilyFlag)
+titanic.test$Title <- as.factor(titanic.test$Title)
+
+titanic.train$Age[is.na(titanic.train$Age)] <- median(titanic.train$Age, na.rm=TRUE)
+titanic.test$Age[is.na(titanic.test$Age)] <- 28
+
+levels(titanic.train$Embarked) <- c("S","C","Q","S")
+
+titanic.train$Title <- str_trim(str_extract(titanic.train$Name, '(?<=,).*(?=\\.)'))
+titanic.test$Title <- str_trim(str_extract(titanic.test$Name, '(?<=,).*(?=\\.)'))
+
+
+titanic.train <- titanic.train[, -c(1, 4, 7, 8, 9, 11,13)]
+titanic.test <- titanic.test[, -c(3, 6, 7, 8, 10,12)]                             
+titanic.rf.model <- randomForest(Survived ~ ., data=titanic.train, importance=TRUE, ntree=500)
+
+titanic.rf.predictions <- predict(titanic.rf.model, titanic.test, type="response")
+## calculate the confusion matrix
+titanic.rf.confusion <- table(titanic.rf.predictions, titanic.test$Survived)
+print(titanic.rf.confusion)	
+## accuracy
+titanic.rf.accuracy <- sum(diag(titanic.rf.confusion)) / sum(titanic.rf.confusion)
+print(titanic.rf.accuracy)
+## precision
+titanic.rf.precision <- titanic.rf.confusion[2,2] / sum(titanic.rf.confusion[2,])
+print(titanic.rf.precision)
+## recall
+titanic.rf.recall <- titanic.rf.confusion[2,2] / sum(titanic.rf.confusion[,2])
+print(titanic.rf.recall)
+## F1 score
+titanic.rf.F1 <- 2 * titanic.rf.precision * titanic.rf.recall / (titanic.rf.precision + titanic.rf.recall)
+print(titanic.rf.F1)
+# We can also report probabilities
+titanic.rf.predictions.prob <- predict(titanic.rf.model, titanic.test, type="prob")
+print(head(titanic.rf.predictions.prob))
+print(head(titanic.test))
+
+## show variable importance
+importance(titanic.rf.model)
+varImpPlot(titanic.rf.model)
+
